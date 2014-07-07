@@ -46,7 +46,7 @@ class grafana (
   $file_source         = undef,
   $file_template       = undef,
   $file_content        = undef,
-  $options             = undef,
+  $options             = {},
   $file_mode           = '0664',
   $file_owner          = 'root',
   $file_group          = 'root',
