@@ -46,7 +46,7 @@ class grafana (
   $file_source         = undef,
   $file_template       = undef,
   $file_content        = undef,
-  $file_options_hash   = undef,
+  $options             = undef,
   $file_mode           = '0664',
   $file_owner          = 'root',
   $file_group          = 'root',
@@ -60,7 +60,7 @@ class grafana (
   # Input parameters validation
   validate_re($ensure, ['present','absent'], 'Valid values are: present, absent. WARNING: If set to absent all the resources managed by the module are removed.')
   validate_re($install, ['package','upstream','puppi'], 'Valid values are: package, upstream, puppi.')
-  if $file_options_hash { validate_hash($file_options_hash) }
+  if $options { validate_hash($options) }
 
   # Calculation of variables used in the module
   if $file_content {
